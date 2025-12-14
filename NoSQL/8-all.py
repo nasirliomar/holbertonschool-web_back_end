@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
-"""lists all documents in a collection"""
+"""Module 8-all: list all documents in a MongoDB collection."""
 
 
 def list_all(mongo_collection):
-    if mongo_collection is None:
-        return []
+    """Return a list of all documents in `mongo_collection`.
+
+    Args:
+        mongo_collection: a pymongo collection object.
+
+    Returns:
+        A list of documents (empty list if the collection has no documents).
+    """
     return list(mongo_collection.find())
